@@ -155,3 +155,50 @@ public class Queue {
         return fullList;
     }
 }
+public void display(int second, int statement, Process activeProcess) {
+    // Print the process ID with a color code
+    System.out.print("\u001b[38;5;" + activeProcess.Id + "m");
+    // Use a switch statement to print the statement according to the case
+    switch (statement) {
+        case 0:
+            // Case 0: the process has started
+            System.out.println(second + " sec process started\t\t(id:" + activeProcess.Id + "\tpriority:" +
+                    activeProcess.priority + "\tremaining time:" + activeProcess.executionTime + ")");
+            break;
+        case 1:
+            // Case 1: the process is running
+            System.out.println(second + " sec process running\t(id:" + activeProcess.Id + "\tpriority:" +
+                    activeProcess.priority + "\tremaining time:" + activeProcess.executionTime + ")");
+            break;
+        case 2:
+            // Case 2: the process is suspended
+            System.out.println(second + " sec process suspended\t(id:" + activeProcess.Id + "\tpriority:" +
+                    activeProcess.priority + "\tremaining time:" + activeProcess.executionTime + ")");
+            break;
+        case 3:
+            // Case 3: the process is completed
+            System.out.println(second + " sec process completed\t(id:" + activeProcess.Id + "\tpriority:" +
+                    activeProcess.priority + "\tremaining time:" + activeProcess.executionTime + ")");
+            break;
+        case 4:
+            // Case 4: the process has timed out
+            System.out.println(second + " sec process timeout\t(id:" + activeProcess.Id + "\tpriority:" +
+                    activeProcess.priority + "\tremaining time:" + activeProcess.executionTime + ")");
+            break;
+    }
+}
+
+// A method to handle the real time processes
+public Process realTime(ArrayList<Process> realTimeLastList, Process activeProcess, int second) {
+    // implementation remains the same
+}
+
+// A method to handle the user job processes
+public Process userJobQueue(ArrayList<Process> userJobList, Process activeProcess, int second) {
+    // implementation remains the same
+}
+
+// A method to control the timeout of the processes
+public ArrayList<Process> timeoutControl(ArrayList<Process> list, int second) {
+    // implementation remains the same
+}
